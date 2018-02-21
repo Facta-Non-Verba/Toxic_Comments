@@ -9,7 +9,7 @@ categories = list(results) #takes the categories above and stores it in list
 #print(categories)
 
 d = []
-length = len(text) 
+length = len(text)
 results = results[:length]
 
 # DOES NECESSARY PARSING AND CONVERTING TEXT TO NUMERICAL DATA (Bag of Words)
@@ -31,12 +31,51 @@ Y_valid = results[~keep].astype(int)
 
 #print(Y_train)
 
-# SLIGHTLY MISNAMED, USES RANDOM FOREST
-for cat in categories:
-    model = RandomForestClassifier()
-    model.fit(X_train, Y_train[cat])
 
-    train_score = model.score(X_train, Y_train[cat])
-    valid_score = model.score(X_valid, Y_valid[cat])
-    print("The training error for the", cat, "case is:", train_score)
-    print("The training error for the validation case is:", valid_score)
+def validation():
+    #Validation for selecting hyper-parameters
+    print("Beginning validation to chose parameters")
+    num_trees = [5, 10, 20]
+    depth = [None] + [5, 15]
+    split = [2, 5, 8]
+    samples_leaf = [1, 3, 5]
+
+    scores = {}
+    params = {}
+    for cat in categories:
+        scores[cat] = float("inf")
+
+    for n_trees in num_trees:
+        for d in depth:
+            for s in split:
+                for samples in samples_leaf:
+                    print("Now considering parameters:", (n_trees, d, s, samples))
+                    for cat in categories:
+                        model = RandomForestClassifier(n_estimators = n_trees, max_depth = d,
+                                                    min_samples_split = s, min_samples_leaf = samples)
+                        model.fit(X_train, Y_train[cat])
+
+                        valid_score = model.score(X_valid, Y_valid[cat])
+                        if scores[cat] < valid_score:
+                            scores[cat] = valid_score
+                            params[cat] = (n_trees, d, s, samples)
+
+    for cat in categories:
+        print("The optimal hyperparameters for", cat, " is", params[cat])
+        print("The validation score associated was", scores[cat])
+
+
+
+# SLIGHTLY MISNAMED, USES RANDOM FOREST
+def main():
+    for cat in categories:
+        model = RandomForestClassifier()
+        model.fit(X_train, Y_train[cat])
+
+        train_score = model.score(X_train, Y_train[cat])
+        valid_score = model.score(X_valid, Y_valid[cat])
+        print("The training error for the", cat, "case is:", train_score)
+        print("The training error for the validation case is:", valid_score)
+
+
+validation()
