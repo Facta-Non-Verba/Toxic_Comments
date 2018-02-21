@@ -9,7 +9,7 @@ categories = list(results) #takes the categories above and stores it in list
 #print(categories)
 
 d = []
-length = len(text)
+length = len(text) // 100
 results = results[:length]
 
 # DOES NECESSARY PARSING AND CONVERTING TEXT TO NUMERICAL DATA (Bag of Words)
@@ -56,7 +56,7 @@ def validation():
                         model.fit(X_train, Y_train[cat])
 
                         valid_score = model.score(X_valid, Y_valid[cat])
-                        if scores[cat] < valid_score:
+                        if scores[cat] > valid_score:
                             scores[cat] = valid_score
                             params[cat] = (n_trees, d, s, samples)
 
