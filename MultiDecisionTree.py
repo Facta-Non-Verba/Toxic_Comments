@@ -9,7 +9,7 @@ categories = list(results) #takes the categories above and stores it in list
 #print(categories)
 
 d = []
-length = len(text) // 10
+length = len(text) 
 results = results[:length]
 
 # DOES NECESSARY PARSING AND CONVERTING TEXT TO NUMERICAL DATA (Bag of Words)
@@ -29,14 +29,14 @@ Y_train = results[keep].astype(int)
 X_valid = df[~keep]
 Y_valid = results[~keep].astype(int)
 
-print(Y_train)
+#print(Y_train)
 
 # SLIGHTLY MISNAMED, USES RANDOM FOREST
 for cat in categories:
     model = RandomForestClassifier()
-    model.fit(X_train, Y_train)
+    model.fit(X_train, Y_train[cat])
 
-    train_score = model.score(X_train, Y_train[cat]) # bug in this line
+    train_score = model.score(X_train, Y_train[cat])
     valid_score = model.score(X_valid, Y_valid[cat])
     print("The training error for the", cat, "case is:", train_score)
     print("The training error for the validation case is:", valid_score)
