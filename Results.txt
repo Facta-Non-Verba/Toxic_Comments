@@ -1,0 +1,27 @@
+For validation using the full dataset running each case once:
+  The optimal hyperparameters for toxic  is (10, 5, 8, 5)
+  The validation score associated was 0.90403268565
+  The optimal hyperparameters for severe_toxic  is (5, None, 2, 1)
+  The validation score associated was 0.989520631257
+  The optimal hyperparameters for obscene  is (5, 5, 5, 5)
+  The validation score associated was 0.947353647506
+  The optimal hyperparameters for threat  is (5, None, 5, 1)
+  The validation score associated was 0.997255403425
+  The optimal hyperparameters for insult  is (5, 15, 8, 1)
+  The validation score associated was 0.949692792315
+  The optimal hyperparameters for identity_hate  is (5, None, 5, 1)
+  The validation score associated was 0.991360758507
+
+For validation using the 0.01 of the full dataset running each case once:
+  The optimal hyperparameters for toxic  is (5, 5, 5, 5)
+  The validation score associated was 0.916913946588
+  The optimal hyperparameters for severe_toxic  is (5, None, 2, 1)
+  The validation score associated was 1.0
+  The optimal hyperparameters for obscene  is (5, None, 2, 1)
+  The validation score associated was 0.952522255193
+  The optimal hyperparameters for threat  is (5, None, 2, 1)
+  The validation score associated was 0.991097922849
+  The optimal hyperparameters for insult  is (10, None, 5, 1)
+  The validation score associated was 0.958456973294
+  The optimal hyperparameters for identity_hate  is (5, None, 2, 1)
+  The validation score associated was 0.982195845697
