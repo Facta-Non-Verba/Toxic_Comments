@@ -9,7 +9,7 @@ categories = list(results) #takes the categories above and stores it in list
 #print(categories)
 
 d = []
-length = len(text) // 100
+length = len(text)
 results = results[:length]
 
 # DOES NECESSARY PARSING AND CONVERTING TEXT TO NUMERICAL DATA (Bag of Words)
@@ -39,6 +39,7 @@ def validation():
     depth = [None] + [5, 15]
     split = [2, 5, 8]
     samples_leaf = [1, 3, 5]
+    num_trials = 10
 
     scores = {}
     params = {}
@@ -51,18 +52,23 @@ def validation():
                 for samples in samples_leaf:
                     print("Now considering parameters:", (n_trees, d, s, samples))
                     for cat in categories:
-                        model = RandomForestClassifier(n_estimators = n_trees, max_depth = d,
-                                                    min_samples_split = s, min_samples_leaf = samples)
-                        model.fit(X_train, Y_train[cat])
+                        valid_score = 0
 
-                        valid_score = model.score(X_valid, Y_valid[cat])
+                        for _ in num_trials:
+                            model = RandomForestClassifier(n_estimators = n_trees, max_depth = d,
+                                                        min_samples_split = s, min_samples_leaf = samples)
+                            model.fit(X_train, Y_train[cat])
+                            valid_score += model.score(X_valid, Y_valid[cat])
+
+                        valid_score /= num_trials
+
                         if scores[cat] > valid_score:
                             scores[cat] = valid_score
                             params[cat] = (n_trees, d, s, samples)
 
     for cat in categories:
         print("The optimal hyperparameters for", cat, " is", params[cat])
-        print("The validation score associated was", scores[cat])
+        print("The average validation score associated was", scores[cat])
 
 
 
