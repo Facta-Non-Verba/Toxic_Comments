@@ -1,3 +1,18 @@
+Traiing Error and Validation Error for Default Hyperparameters
+  The training error for the toxic case is: 0.987966938516
+  The training error for the validation case is: 0.914894939699
+  The training error for the severe_toxic case is: 0.998218196375
+  The training error for the validation case is: 0.990053462638
+  The training error for the obscene case is: 0.991781725131
+  The training error for the validation case is: 0.952474201169
+  The training error for the threat case is: 0.9990894748
+  The training error for the validation case is: 0.997202536367
+  The training error for the insult case is: 0.991985808366
+  The training error for the validation case is: 0.954556757429
+  The training error for the identity_hate case is: 0.99777078313
+  The training error for the validation case is: 0.992011687181
+
+
 For validation using the full dataset running each case once:
   The optimal hyperparameters for toxic  is (10, 5, 8, 5)
   The validation score associated was 0.90403268565
@@ -25,3 +40,20 @@ For validation using the 0.01 of the full dataset running each case once:
   The validation score associated was 0.958456973294
   The optimal hyperparameters for identity_hate  is (5, None, 2, 1)
   The validation score associated was 0.982195845697
+
+For validation using 0.01 of the full dataset running each case 10 times and averaging:
+  The optimal hyperparameters for toxic  is (5, None, 2, 1)
+  The average validation score associated was 0.913981762918
+  The optimal hyperparameters for severe_toxic  is (5, 15, 2, 1)
+  The average validation score associated was 0.987234042553
+  The optimal hyperparameters for obscene  is (10, 15, 5, 1)
+  The average validation score associated was 0.959574468085
+  The optimal hyperparameters for threat  is (5, None, 2, 1)
+  The average validation score associated was 0.993920972644
+  The optimal hyperparameters for insult  is (5, None, 2, 1)
+  The average validation score associated was 0.958662613982
+  The optimal hyperparameters for identity_hate  is (5, None, 2, 1)
+  The average validation score associated was 0.996960486322
+
+Conclusion: Changing the hyper-parameters don't have much of an effect on the
+validation accuracy.
