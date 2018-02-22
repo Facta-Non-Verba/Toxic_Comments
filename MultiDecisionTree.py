@@ -54,7 +54,8 @@ def validation():
                     for cat in categories:
                         valid_score = 0
 
-                        for _ in num_trials:
+                        for a in range(num_trials):
+                            print("on trial", a)
                             model = RandomForestClassifier(n_estimators = n_trees, max_depth = d,
                                                         min_samples_split = s, min_samples_leaf = samples)
                             model.fit(X_train, Y_train[cat])
@@ -84,4 +85,4 @@ def main():
         print("The training error for the validation case is:", valid_score)
 
 
-validation()
+main()
