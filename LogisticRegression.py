@@ -12,7 +12,6 @@ from sklearn.model_selection import GridSearchCV
 d = []
 length = len(text)
 results = results[:length]
-print(length)
 
 # DOES NECESSARY PARSING AND CONVERTING TEXT TO NUMERICAL DATA (Bag of Words)
 for i in range(length):
