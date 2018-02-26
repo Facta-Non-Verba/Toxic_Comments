@@ -1,0 +1,75 @@
+Using 1/100 of the data:
+
+For category toxic  the best parameters are
+LogisticRegression(C=0.1, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l1', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+With a validation score of 0.90407523511
+
+For category severe_toxic  the best parameters are
+LogisticRegression(C=0.1, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l1', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+With a validation score of 0.98934169279
+
+For category obscene  the best parameters are
+LogisticRegression(C=1, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l1', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+With a validation score of 0.958620689655
+
+For category threat  the best parameters are
+LogisticRegression(C=0.1, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l1', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+With a validation score of 0.994984326019
+For category insult  the best parameters are
+LogisticRegression(C=0.1, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l1', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+With a validation score of 0.953605015674
+
+For category identity_hate  the best parameters are
+LogisticRegression(C=0.1, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l1', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+With a validation score of 0.98934169279
+
+USING LOGISTIC REGRESSION:
+The training error for the toxic case is: 0.936520376176
+The training error for the validation case is: 0.887147335423
+The training error for the severe_toxic case is: 0.995297805643
+The training error for the validation case is: 0.981191222571
+The training error for the obscene case is: 0.978056426332
+The training error for the validation case is: 0.940438871473
+The training error for the threat case is: 0.996865203762
+The training error for the validation case is: 0.993730407524
+The training error for the insult case is: 0.977272727273
+The training error for the validation case is: 0.934169278997
+The training error for the identity_hate case is: 0.995297805643
+The training error for the validation case is: 0.978056426332
+
+FOR ALL THE DATA:
+USING LOGISTIC REGRESSION:
+The training error for the toxic case is: 0.910679535468
+The training error for the validation case is: 0.910647038685
+The training error for the severe_toxic case is: 0.9901522285
+The training error for the validation case is: 0.990538732066
+The training error for the obscene case is: 0.94996861268
+The training error for the validation case is: 0.950234975569
+The training error for the threat case is: 0.997057438795
+The training error for the validation case is: 0.996452024525
+The training error for the insult case is: 0.951114249843
+The training error for the validation case is: 0.952008963306
+The training error for the identity_hate case is: 0.991148775895
+The training error for the validation case is: 0.990849957985
+
+
+
+
