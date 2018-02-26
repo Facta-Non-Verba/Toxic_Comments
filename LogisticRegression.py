@@ -3,15 +3,16 @@ import pandas as pd
 import sklearn.linear_model as sk
 from sklearn.model_selection import GridSearchCV
 
-data = pd.read_csv("train.csv") #reads in data
-results = data[["toxic", "severe_toxic", "obscene", "threat", "insult", "identity_hate"]] #the outcomes
-text = data["comment_text"] #stores in the actual text
-categories = list(results)  #takes the categories above and stores it in list
+# data = pd.read_csv("train.csv") #reads in data
+# results = data[["toxic", "severe_toxic", "obscene", "threat", "insult", "identity_hate"]] #the outcomes
+# text = data["comment_text"] #stores in the actual text
+# categories = list(results)  #takes the categories above and stores it in list
 #print(categories)
 
 d = []
 length = len(text)
 results = results[:length]
+print(length)
 
 # DOES NECESSARY PARSING AND CONVERTING TEXT TO NUMERICAL DATA (Bag of Words)
 for i in range(length):
