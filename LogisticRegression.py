@@ -10,7 +10,7 @@ categories = list(results)  #takes the categories above and stores it in list
 #print(categories)
 
 d = []
-length = len(text) // 10
+length = len(text) // 100
 results = results[:length]
 
 # DOES NECESSARY PARSING AND CONVERTING TEXT TO NUMERICAL DATA (Bag of Words)
@@ -18,13 +18,11 @@ for i in range(length):
     words = text[i]
     content = words.split()
     counts = {x:words.count(x) for x in set(content)}
-    counts['id'] = data["id"][i]
+    #print(counts)
+    #counts['id'] = data["id"][i]
     d = d + [counts]
-    counts = None
-    content = None
-    words = None
 
-df = pd.DataFrame(d).fillna(0).drop(["id"])
+df = pd.DataFrame(d).fillna(0)
 
 # SPLITS DATASET TO TRAINING SET AND VALIDATION SET
 keep = np.random.rand(len(df)) < 0.8
@@ -62,4 +60,4 @@ def multi_validation():
 
     return None
 
-multi_evaluate()
+multi_validation()
