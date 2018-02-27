@@ -10,7 +10,8 @@ categories = list(results)  #takes the categories above and stores it in list
 #print(categories)
 
 d = []
-length = len(text) // 100
+#length = len(text) // 25
+length = 10000
 results = results[:length]
 
 # DOES NECESSARY PARSING AND CONVERTING TEXT TO NUMERICAL DATA (Bag of Words)
