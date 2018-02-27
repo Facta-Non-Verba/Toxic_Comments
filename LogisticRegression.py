@@ -9,6 +9,8 @@ text = data["comment_text"] #stores in the actual text
 categories = list(results)  #takes the categories above and stores it in list
 #print(categories)
 
+data = None
+
 d = []
 #length = len(text) // 25
 length = 10000
@@ -22,6 +24,9 @@ for i in range(length):
     #print(counts)
     #counts['id'] = data["id"][i]
     d = d + [counts]
+    words = None
+    content = None 
+    counts = None
 
 df = pd.DataFrame(d).fillna(0)
 
