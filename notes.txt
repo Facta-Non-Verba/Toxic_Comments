@@ -1,0 +1,8 @@
+For using full words in a bag of words model, max amount of data that can be handled is about
+1600. 
+
+Interesting to note that if we are only considering single digit letters in our model, we can get
+up to 95% accuracy in most models. I am genuinely impressed by this.
+
+Perhaps a valid model to consider would be to use both words, as well as the numerical count of 
+each letter. Unfortunately I do not have enough memory to do this reasonably. 
